@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Vibe知识大赏 - 足底筋膜炎张力链",
   "scripts": {
-    "start": "remotion preview src/index.ts",
-    "preview": "remotion preview src/index.ts",
-    "build": "remotion render src/index.ts FootTension out/foot-tension.mp4"
+    "start": "remotion studio",
+    "studio": "remotion studio",
+    "preview": "remotion studio",
+    "build": "remotion render FootTension out/foot-tension.mp4"
   },
   "dependencies": {
     "@remotion/cli": "4.0.537",
