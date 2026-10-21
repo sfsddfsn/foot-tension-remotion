@@ -7,6 +7,8 @@ import {
   interpolate,
   spring,
   random,
+  Audio,
+  staticFile,
 } from "remotion";
 
 const GOLD = "#D4AF37";
@@ -147,6 +149,18 @@ export const FootTension: React.FC = () => {
         overflow: "hidden",
       }}
     >
+      {/* 背景音乐 - 卡点淡入 */}
+      <Audio
+        src={staticFile("bgm.mp3")}
+        volume={(f) =>
+          interpolate(f, [0, 30, 540, 600], [0, 0.55, 0.55, 0], {
+            extrapolateLeft: "clamp",
+            extrapolateRight: "clamp",
+          })
+        }
+      />
+
+      {/* 缓慢粒子微光 */}
       {Array.from({ length: 48 }).map((_, i) => (
         <Particle key={i} seed={i * 17.3} />
       ))}
